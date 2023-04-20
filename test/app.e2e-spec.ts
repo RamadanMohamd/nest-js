@@ -152,10 +152,11 @@ describe('App e2e', () => {
         })
         .withBody(dto)
         .expectStatus(200)
-        .inspect() 
+        .expectBodyContains(dto.firstName)
+        .expectBodyContains(dto.email)
       },7000)
     });
-    
+
   });
 
   describe('Bookmarks', () => {
